@@ -9,8 +9,6 @@ import guru.springframework.spring5webapp.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
-
 @Component
 public class BootsTrapData implements CommandLineRunner {
 
@@ -37,7 +35,7 @@ public class BootsTrapData implements CommandLineRunner {
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
 
-        ddd.setPublishers(publisher);
+        ddd.setPublisher(publisher);
         publisher.getBooks().add(ddd);
 
         authorRepository.save(eric);
@@ -50,7 +48,7 @@ public class BootsTrapData implements CommandLineRunner {
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
 
-        noEJB.setPublishers(publisher);
+        noEJB.setPublisher(publisher);
         publisher.getBooks().add(noEJB);
 
         authorRepository.save(rod);
